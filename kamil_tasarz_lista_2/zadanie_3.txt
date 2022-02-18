@@ -1,0 +1,39 @@
+console.log((![]+[])[+[]]+(![]+[])[+!+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]);
+
+Będę rozważał kolejno 4 grupy (podwyrażenia):
+
+1: (![]+[])[+[]]
+[] - pusta tablica jako wartość boolowska jest interpretowana jako true, jako napis jest napisem pustym, a jako liczba jest zerem
+![] - negacja true, czyli false
+![]+[] - false + "" = "false", fałsz jest konwertowany na stringa i na jego końcu dodany jest pusty napis
++[] - plus konwertuje pustą tablicę na zero
+zatem pierwsze podwyrażenie to: 'false'[0] = 'f'
+
+2: (![]+[])[+!+[]]
+(![]+[]) - "false", analogicznie jak poprzednio
++[] - 0 jak poprzednio
+!+[] - negacja zera, czyli przy konwersji zera do fałszu, daje true
++!+[] - plus konwertuje wartość true na liczbę 1
+tutaj mamy zatem: 'false'[1] = 'a'
+
+3: ([![]]+[][[]])[+!+[]+[+[]]]
+![] - false, tak jak poprzednio
+[![]] - jednoalementowa tablica z wartością false w swojej komórce
+[] - pusta tablica interpretowana jako pusty string
+[[]] - to samo co ['']
+[][[]] - odwołanie się do [[]] elementu tablicy, który jest niezdefiniowany, w rezultacie dostajemy undefined
+[![]]+[][[]] - [false]+undefined są konwertowane na stringi i dają razem napis 'falseundefined'
++[] - plus konwertuje pustą tablicę na zero
+[+[]] - to samo co [0]
++!+[] - 1, tak jak poprzednio
++!+[]+[+[]] - daje to 1+[0] po konwersji na stringi daje napis '10'
+ostatecznie mamy: 'falseundefined'['10'] = 'falseundefined'[10] = i
+
+4: (![]+[])[!+[]+!+[]]
+(![]+[]) - "false", analogicznie jak poprzednio
+!+[] - true, jak poprzednio
++!+[] - 1, jak poprzednio
+!+[]+!+[] - po konwersji na liczby to daje 1+1, czyli dwa
+mamy zatem: 'false'[2] = l
+
+Ostatecznie całość to 4 litery dodane do siebie: 'f'+'a'+'i'+'l' = 'fail'.

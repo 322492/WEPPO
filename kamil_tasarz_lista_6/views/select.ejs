@@ -1,0 +1,13 @@
+<fieldset>
+    <legend>
+        <%= name %>
+    </legend>
+    <% options.forEach( option=> { %>
+        <div>
+            <input type="checkbox" name='<%= option.text %>'>
+            <label for='<%= option.text %>'>
+                <%= option.text %>
+            </label>
+        </div>
+        <% }) %>
+</fieldset>

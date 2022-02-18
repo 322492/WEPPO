@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form method="POST">
+        <div>Imię: <%= imie%> </div>
+        <div>Nazwisko: <%= nazwisko%></div>
+        <div>Nazwa Przedmiotu: <%= przedmiot%> </div>
+
+        <div>
+            <% for ( var i=1; i<=10; i++ ) { %>
+                    <div> Zadanie <%= i%>: <%= punkty[i]%> </div>
+            <% } %>
+        </div>
+
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+Poznałem debugger warstwy HTTP, Burp.
+
+Przeczytałem i wykonałem ćwiczenie z poniższego "samouczka"
+https://portswigger.net/burp/documentation/desktop/getting-started/intercepting-http-traffic
+Burp z włączoną opcją "Intercept is on" pozwala oglądać zawartość zapytań i modyfikować je.
+
+Zapoznałem się z kolejnym "samouczkiem"
+(https://portswigger.net/burp/documentation/desktop/getting-started/reissuing-http-requests).
+W zakładce "Proxy/HTTP history" wysłałem jedno z żądań do repeatera.
+Skorzystałem z zakładki "repeater", by wielokrotnie wysyłać zmodyfikowane żądanie do strony.
+

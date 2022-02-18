@@ -1,0 +1,5 @@
+Operator typeof zwraca typ operandu.
+Jest to napis, który jest nazwą typu prostego (np. "string", "number" czy "undefined") lub napis "object" jeśli operand nie jest typu prostego.
+
+Operator instanceof zwraca wartość boolowską.
+Jeśli dany obiekt został utworzony danym konstruktorem (jest instancją danego obiektu) zwracana jest wartość true, w przeciwnym przypadku - false.
